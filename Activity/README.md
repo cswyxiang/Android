@@ -98,3 +98,72 @@ Log.d("key",data);
 7. key 和 value
 
 
+singleTask  一个活动只有一个，当启动该活动时系统优先在返回栈中检查是否存在该活动的实例，如果发现已存在则直接使用该实例，并把这个活动之上的活动统统出栈。
+
+Toast
+
+	Toast.makeText(FirstActivity.this,"这是一条提示",Toast.LENGTH_LONG).show();
+	
+	
+EditText
+
+
+```
+<EditText
+        android:maxLines="1"
+        android:id="@+id/et"
+        android:hint="这是一个EditText"
+        android:inputType="date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+```
+
+inputType：time、phone、numberPassword、textPassword等
+
+maxLines 指定最大行数  、minLines
+
+获取EditText的文本
+
+```java
+EditText et = findViewById(R.id.et);
+String s = et.getText().toString();
+```
+
+ImageView
+
+
+```
+<ImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"/>
+
+
+ImageView img = findViewById(R.id.image_view);
+img.setImageResource(R.mipmap.ic_launcher_round);
+```
+
+ProgressBar
+
+
+```
+ 
+<ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        
+```
+
+```
+if(progressBar.getVisibility() == View.GONE){
+            progressBar.setVisibility(View.VISIBLE);
+        }else {
+            progressBar.setVisibility(View.GONE);
+        }
+
+```
+
+
+gravity的用法
